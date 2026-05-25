@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="robots" content="noindex">
+  <style>
+    * { margin: 0; padding: 0; }
+    body { background: #000; }
+    img { width: 100vw; height: 100vh; object-fit: contain; display: block; }
+  </style>
+</head>
+<body>
+  <img id="cam" alt="MacKay Bridge Halifax Bound" />
+  <script>
+    const CAM_URL = "https://halifaxharbourbridges.ca/wp-content/traffic_cam_images/mackay-halifax-bound.png";
+    const img = document.getElementById("cam");
+
+    function refresh() {
+      img.src = CAM_URL + "?t=" + Date.now();
+    }
+
+    refresh();
+    setInterval(refresh, 20000);
+  </script>
+</body>
+</html>
